@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/lange-school-server/databases/Group3_Database",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:Group3_Database",
+      "dynamicId": null
+    }
+  }
+}

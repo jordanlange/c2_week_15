@@ -55,7 +55,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "BigRed.Group3_Database",
+   "UiHint": "lange-school-server.Group3_Database",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

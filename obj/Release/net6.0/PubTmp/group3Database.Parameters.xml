@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="group3DatabaseDeployment" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\A_School_Work\\C\#\ 2\\Week_11\\group3Database\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

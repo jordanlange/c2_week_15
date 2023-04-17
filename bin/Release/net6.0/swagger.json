@@ -1,0 +1,633 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "group3Database, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Instructors": {
+      "get": {
+        "tags": [
+          "Instructors"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Instructor"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Instructors"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Instructor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Instructor"
+            }
+          }
+        }
+      }
+    },
+    "/api/Instructors/{id}": {
+      "get": {
+        "tags": [
+          "Instructors"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Instructor"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Instructors"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Instructor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Instructors"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Students": {
+      "get": {
+        "tags": [
+          "Students"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Students"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      }
+    },
+    "/api/Students/{id}": {
+      "get": {
+        "tags": [
+          "Students"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Students"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Students"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/WeatherForecast"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ClassSchedule": {
+      "type": "object",
+      "properties": {
+        "classId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "weekDayId": {
+          "type": "string"
+        },
+        "classSchTime": {
+          "$ref": "#/definitions/TimeSpan"
+        },
+        "class": {
+          "$ref": "#/definitions/ClassTable"
+        },
+        "weekDay": {
+          "$ref": "#/definitions/WeekDay"
+        }
+      }
+    },
+    "ClassTable": {
+      "type": "object",
+      "properties": {
+        "classId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "courseId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "instructorId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "classMaxSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roomId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "classStartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "classEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "classWithdrawEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "classDropEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "course": {
+          "$ref": "#/definitions/Course"
+        },
+        "instructor": {
+          "$ref": "#/definitions/Instructor"
+        },
+        "room": {
+          "$ref": "#/definitions/Room"
+        },
+        "classSchedules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassSchedule"
+          }
+        },
+        "studentClasses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StudentClass"
+          }
+        }
+      }
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "courseId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "courseName": {
+          "type": "string"
+        },
+        "courseDescription": {
+          "type": "string"
+        },
+        "courseCredits": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subjectId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subject": {
+          "$ref": "#/definitions/Subject"
+        },
+        "classTables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassTable"
+          }
+        }
+      }
+    },
+    "Instructor": {
+      "type": "object",
+      "properties": {
+        "instructorId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "instructorFirstName": {
+          "type": "string"
+        },
+        "instructorMiddleName": {
+          "type": "string"
+        },
+        "instructorLastName": {
+          "type": "string"
+        },
+        "instructorEmpstatus": {
+          "type": "string"
+        },
+        "instructorPhone": {
+          "type": "string"
+        },
+        "instructorEmail": {
+          "type": "string"
+        },
+        "classTables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassTable"
+          }
+        }
+      }
+    },
+    "Room": {
+      "type": "object",
+      "properties": {
+        "roomId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "classTables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassTable"
+          }
+        }
+      }
+    },
+    "Student": {
+      "type": "object",
+      "properties": {
+        "studentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "studentFirstName": {
+          "type": "string"
+        },
+        "studentMiddleName": {
+          "type": "string"
+        },
+        "studentLastName": {
+          "type": "string"
+        },
+        "studentPhone": {
+          "type": "string"
+        },
+        "studentEmail": {
+          "type": "string"
+        },
+        "studentClasses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StudentClass"
+          }
+        }
+      }
+    },
+    "StudentClass": {
+      "type": "object",
+      "properties": {
+        "classId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "studentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "studClassGrade": {
+          "type": "string"
+        },
+        "classStatusCode": {
+          "type": "string"
+        },
+        "class": {
+          "$ref": "#/definitions/ClassTable"
+        },
+        "student": {
+          "$ref": "#/definitions/Student"
+        }
+      }
+    },
+    "Subject": {
+      "type": "object",
+      "properties": {
+        "subjectId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subjectName": {
+          "type": "string"
+        },
+        "courses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Course"
+          }
+        }
+      }
+    },
+    "TimeSpan": {
+      "type": "object",
+      "properties": {
+        "ticks": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "days": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "hours": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "milliseconds": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "minutes": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "seconds": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "totalDays": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        },
+        "totalHours": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        },
+        "totalMilliseconds": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        },
+        "totalMinutes": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        },
+        "totalSeconds": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        }
+      }
+    },
+    "WeatherForecast": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "temperatureC": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "temperatureF": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "summary": {
+          "type": "string"
+        }
+      }
+    },
+    "WeekDay": {
+      "type": "object",
+      "properties": {
+        "weekDayId": {
+          "type": "string"
+        },
+        "classSchedules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassSchedule"
+          }
+        }
+      }
+    }
+  }
+}

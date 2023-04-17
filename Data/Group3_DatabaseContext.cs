@@ -35,7 +35,7 @@ namespace group3Database.Data
             modelBuilder.Entity<ClassSchedule>(entity =>
             {
                 entity.HasKey(e => new { e.ClassId, e.WeekDayId })
-                    .HasName("PK__ClassSch__7237021F8A0D06CB");
+                    .HasName("PK__ClassSch__7237021F03628AC8");
 
                 entity.ToTable("ClassSchedule");
 
@@ -47,19 +47,19 @@ namespace group3Database.Data
                     .WithMany(p => p.ClassSchedules)
                     .HasForeignKey(d => d.ClassId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ClassSche__Class__4BAC3F29");
+                    .HasConstraintName("FK__ClassSche__Class__70DDC3D8");
 
                 entity.HasOne(d => d.WeekDay)
                     .WithMany(p => p.ClassSchedules)
                     .HasForeignKey(d => d.WeekDayId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ClassSche__WeekD__4CA06362");
+                    .HasConstraintName("FK__ClassSche__WeekD__71D1E811");
             });
 
             modelBuilder.Entity<ClassTable>(entity =>
             {
                 entity.HasKey(e => e.ClassId)
-                    .HasName("PK__ClassTab__CB1927C0204A1F15");
+                    .HasName("PK__ClassTab__CB1927C0FB6C430B");
 
                 entity.ToTable("ClassTable");
 
@@ -77,19 +77,19 @@ namespace group3Database.Data
                     .WithMany(p => p.ClassTables)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ClassTabl__Cours__45F365D3");
+                    .HasConstraintName("FK__ClassTabl__Cours__6B24EA82");
 
                 entity.HasOne(d => d.Instructor)
                     .WithMany(p => p.ClassTables)
                     .HasForeignKey(d => d.InstructorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ClassTabl__Instr__46E78A0C");
+                    .HasConstraintName("FK__ClassTabl__Instr__6C190EBB");
 
                 entity.HasOne(d => d.Room)
                     .WithMany(p => p.ClassTables)
                     .HasForeignKey(d => d.RoomId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ClassTabl__RoomI__48CFD27E");
+                    .HasConstraintName("FK__ClassTabl__RoomI__6E01572D");
             });
 
             modelBuilder.Entity<Course>(entity =>
@@ -109,7 +109,7 @@ namespace group3Database.Data
                     .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.SubjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Course__SubjectI__4316F928");
+                    .HasConstraintName("FK__Course__SubjectI__68487DD7");
             });
 
             modelBuilder.Entity<Instructor>(entity =>
@@ -159,7 +159,7 @@ namespace group3Database.Data
             modelBuilder.Entity<Status>(entity =>
             {
                 entity.HasKey(e => e.ClassStatusCode)
-                    .HasName("PK__Status__F727C6A83603FA4A");
+                    .HasName("PK__Status__F727C6A8829B6710");
 
                 entity.ToTable("Status");
 
@@ -212,7 +212,7 @@ namespace group3Database.Data
             modelBuilder.Entity<StudentClass>(entity =>
             {
                 entity.HasKey(e => new { e.ClassId, e.StudentId })
-                    .HasName("PK__StudentC__48357579B0497DFF");
+                    .HasName("PK__StudentC__48357579B3A56DEE");
 
                 entity.ToTable("StudentClass");
 
@@ -230,13 +230,13 @@ namespace group3Database.Data
                     .WithMany(p => p.StudentClasses)
                     .HasForeignKey(d => d.ClassId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__StudentCl__Class__5165187F");
+                    .HasConstraintName("FK__StudentCl__Class__76969D2E");
 
                 entity.HasOne(d => d.Student)
                     .WithMany(p => p.StudentClasses)
                     .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__StudentCl__Stude__52593CB8");
+                    .HasConstraintName("FK__StudentCl__Stude__778AC167");
             });
 
             modelBuilder.Entity<Subject>(entity =>
