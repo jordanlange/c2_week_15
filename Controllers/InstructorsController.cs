@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using group3Database.Data;
 using group3Database.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace group3Database.Controllers
 {
@@ -22,6 +23,7 @@ namespace group3Database.Controllers
         }
 
         // GET: api/Instructors
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Instructor>>> GetInstructors()
         {
@@ -33,6 +35,7 @@ namespace group3Database.Controllers
         }
 
         // GET: api/Instructors/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Instructor>> GetInstructor(int id)
         {

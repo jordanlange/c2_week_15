@@ -283,3 +283,4 @@ D:\A_School_Work\C# 2\Week_11\group3Database\obj\Debug\net6.0\refint\group3Datab
 D:\A_School_Work\C# 2\Week_11\group3Database\obj\Debug\net6.0\group3Database.pdb
 D:\A_School_Work\C# 2\Week_11\group3Database\obj\Debug\net6.0\group3Database.genruntimeconfig.cache
 D:\A_School_Work\C# 2\Week_11\group3Database\obj\Debug\net6.0\ref\group3Database.dll
+D:\A_School_Work\C# 2\Week_11\group3Database\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

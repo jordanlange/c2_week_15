@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using group3Database.Data;
 using group3Database.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace group3Database.Controllers
 {
@@ -16,12 +17,16 @@ namespace group3Database.Controllers
     {
         private readonly Group3_DatabaseContext _context;
 
-        public StudentsController(Group3_DatabaseContext context)
+        private readonly JwtAuthenticationManager jwtAuthenticationManager;
+
+        public StudentsController(JwtAuthenticationManager jwtAuthenticationManager)
         {
-            _context = context;
+            this.jwtAuthenticationManager = jwtAuthenticationManager;
         }
 
+
         // GET: api/Students
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
@@ -33,6 +38,7 @@ namespace group3Database.Controllers
         }
 
         // GET: api/Students/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetStudent(int id)
         {
@@ -83,6 +89,18 @@ namespace group3Database.Controllers
 
         // POST: api/Students
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [AllowAnonymous]
+        [HttpPost("Authorize")]
+        public IActionResult group3Database([FromBody] User usr)
+        {
+            var token = jwtAuthenticationManager.Authenticate(usr.username, usr.password);
+            if (token == null)
+            {
+                return Unauthorized();
+            }
+            return Ok(token);
+        }
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
         {
@@ -121,4 +139,5 @@ namespace group3Database.Controllers
             return (_context.Students?.Any(e => e.StudentId == id)).GetValueOrDefault();
         }
     }
+    
 }
