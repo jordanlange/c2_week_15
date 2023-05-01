@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\group3Database.sln",
+  "SelectedNode": "\\JwtAuthenticationManager.cs",
   "PreviewInSolutionExplorer": false
 }

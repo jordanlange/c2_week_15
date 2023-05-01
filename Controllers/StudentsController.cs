@@ -17,11 +17,11 @@ namespace group3Database.Controllers
     {
         private readonly Group3_DatabaseContext _context;
 
-        private readonly JwtAuthenticationManager jwtAuthenticationManager;
 
-        public StudentsController(JwtAuthenticationManager jwtAuthenticationManager)
+        public StudentsController( Group3_DatabaseContext _DatabaseContext)
         {
-            this.jwtAuthenticationManager = jwtAuthenticationManager;
+         
+            _context = _DatabaseContext;
         }
 
 
@@ -89,17 +89,7 @@ namespace group3Database.Controllers
 
         // POST: api/Students
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [AllowAnonymous]
-        [HttpPost("Authorize")]
-        public IActionResult group3Database([FromBody] User usr)
-        {
-            var token = jwtAuthenticationManager.Authenticate(usr.username, usr.password);
-            if (token == null)
-            {
-                return Unauthorized();
-            }
-            return Ok(token);
-        }
+        
         [Authorize]
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
